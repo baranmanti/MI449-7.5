@@ -1,0 +1,22 @@
+---
+layout: layout.liquid
+title: Generate Name
+---
+
+<div x-data="RandomName()" class="container">
+    <h1 x-text="name"></h1>
+    <button @click="generateName">Generate Name</button>
+</div>
+
+<script>
+function RandomName() {
+    return {
+        name: 'Click the button',
+
+        generateName() {
+            const names = ['Baran', 'Rebekah', 'Joseph', 'Terri', 'Abby', 'Noah', 'Kurt', 'Jack', 'Cosette', 'Constanza'];
+            this.name = names[Math.floor(Math.random() * names.length)];
+        }
+    }
+}
+</script>
